@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 p, li, #recipes, td {
     font-size: 18px;
 }
@@ -29,4 +30,3 @@ p, li, #recipes, td {
 #nav-mobile li a{
   color: white;
 }
-
