@@ -3,9 +3,9 @@
 <button class="btn waves-effect teal"><%= link_to 'Add New Recipe', new_recipe_path %></button>
 <br>
 <br>
+<div class="collection">
 <%@user_recipes.each do |recipe|%>
-<br>
-  <li><%=recipe.name%> <%= link_to 'More info', recipe%></li>
-<br>
+  <li class="collection-item"><%=recipe.name%> <%= link_to 'More info', recipe%></li>
 <%end%>
+</div>
 </ul>
