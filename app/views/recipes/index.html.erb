@@ -41,19 +41,19 @@
 
 
     <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.name %> <%= link_to 'More info', recipe%></td>
-        <td><%= recipe.user.email%></td>
-        <td><%= recipe.difficulty %></td>
-        <td><%= recipe.prep_time %> minutes</td>
+      <tr class="collection">
+        <td class="collection-item"><%= recipe.name %> <%= link_to 'More info', recipe%></td>
+        <td class="collection-item"><%= recipe.user.email%></td>
+        <td class="collection-item"><%= recipe.difficulty %></td>
+        <td class="collection-item"><%= recipe.prep_time %> minutes</td>
         <% sum = 0 %>
         <% recipe.ratings.each do |rating| %>
           <% sum += rating.score %>
         <% end %>
         <% if recipe.ratings.empty? %>
-        <td>Unrated</td>
+        <td class="collection-item">Unrated</td>
         <% else %>
-        <td><%= sum / recipe.ratings.length %><td>
+        <td class="collection-item"><%= sum / recipe.ratings.length %><td>
         <% end %>
       </tr>
     <% end %>
