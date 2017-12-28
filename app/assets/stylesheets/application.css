@@ -30,3 +30,7 @@ p, li, #recipes, td {
 #nav-mobile li a{
   color: white;
 }
+
+.text-text {
+  text-align: center
+}
