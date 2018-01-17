@@ -1,14 +1,10 @@
 class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
 
-  # GET /ratings
-  # GET /ratings.json
   def index
     @ratings = Rating.all
   end
-
-  # GET /ratings/1
-  # GET /ratings/1.json
+  
   def show
   end
 
@@ -17,12 +13,9 @@ class RatingsController < ApplicationController
     @rating = Recipe.find_by(id: params[:recipe_id]).ratings.new
   end
 
-  # GET /ratings/1/edit
   def edit
   end
 
-  # POST /ratings
-  # POST /ratings.json
   def create
     @rating = Recipe.find_by(id: params[:recipe_id]).ratings.new(rating_params)
     @rating.user = current_user
@@ -38,8 +31,6 @@ class RatingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /ratings/1
-  # PATCH/PUT /ratings/1.json
   def update
     @rating = Recipe.find_by(id: params[:recipe_id]).ratings.new(rating_params)
     @rating.user = current_user
@@ -55,8 +46,6 @@ class RatingsController < ApplicationController
     end
   end
 
-  # DELETE /ratings/1
-  # DELETE /ratings/1.json
   def destroy
     @rating.destroy
     respond_to do |format|
@@ -66,12 +55,10 @@ class RatingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_rating
       @rating = Rating.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def rating_params
       params.require(:rating).permit(:score, :references)
     end
