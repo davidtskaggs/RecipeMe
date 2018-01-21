@@ -11,7 +11,6 @@
   <%end%>
 </div>
 <br />
-
 <div id="search-box-name">
   <%= form_tag('/recipes', method: "get") do %>
     <%= label_tag(:name, "Search by recipe name:") %>
@@ -20,7 +19,6 @@
   <%end%>
 </div>
 <br />
-
 <% if @recipes.blank? && params[:ingredient] %>
   <p>There are no recipes with <%= params[:ingredient]%>. </p>
 <%elsif @recipes.blank? && params[:name] %>
@@ -38,8 +36,6 @@
     </tr>
   </thead>
   <tbody>
-
-
     <% @recipes.each do |recipe| %>
       <tr class="collection">
         <td class="collection-item"><%= recipe.name %> <%= link_to 'More info', recipe%></td>
