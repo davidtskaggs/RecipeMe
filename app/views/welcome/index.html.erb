@@ -17,7 +17,7 @@
   <tbody>
     <% @recipes_by_rating.each do |recipe| %>
       <tr class="collection">
-        <td class='collection-item'><%= recipe.name %> <%= link_to 'More info', recipe%></td>
+        <td class='collection-item'><%= link_to recipe.name, recipe %> </td>
         <td class='collection-item'><%= recipe.difficulty %></td>
         <td class='collection-item'><%= recipe.prep_time %> minutes</td>
         <% sum = 0 %>
