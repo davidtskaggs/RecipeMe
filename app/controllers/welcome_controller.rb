@@ -6,4 +6,8 @@ class WelcomeController < ApplicationController
     @recipes_by_rating = recipes_sort(@recipes).reverse.first(5)
   end
 
+  def about
+
+  end
+
 end

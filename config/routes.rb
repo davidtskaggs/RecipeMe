@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   match 'users/:id' => 'users#show', via: :get
   root 'welcome#index'
+  get 'about' => 'welcome#about'
 end
