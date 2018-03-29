@@ -20,6 +20,6 @@ end
   Recipe.create(name: Faker::Food.dish, difficulty: ["Hard","Easy", "Medium"].sample, prep_time: Faker::Number.number(2), directions: Faker::Lorem.paragraph, ingredients: Faker::Food.ingredient, user_id: Faker::Number.between(1, 4), category: "Appetizer")
 end
 
-# 10000.times do
-#   Rating.create(score: Faker::Number.between(1, 5), user_id: Faker::Number.between(1, 4), recipe_id: Faker::Number.between(1, 30))
-# end
+10000.times do
+  Rating.create(score: Faker::Number.between(1, 5), user_id: Faker::Number.between(1, 4), recipe_id: Faker::Number.between(1, 30))
+end
