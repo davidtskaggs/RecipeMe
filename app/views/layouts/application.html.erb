@@ -13,22 +13,7 @@
     </style>
   </head>
   <body>
-    <nav>
-      <div class="nav-wrapper 9e9e9e grey">
-        <a href="/" class="brand-logo"><i class="material-icons">home</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <% if user_signed_in? %>
-            <li><%= link_to "New Recipe", new_recipe_path , :class => 'navbar-link'%></li>
-            <li><%= link_to "All Recipes", recipes_path , :class => 'navbar-link'%></li>
-            <li><%= link_to "My Recipes", user_path(current_user.id), :class => 'navbar-link' %></li>
-            <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
-          <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %></li>
-            <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
-          <% end %>
-      </div>
-    </nav>
+    <%= render 'shared/nav' %>
     <div class="container">
       <%= render 'shared/alerts' %>
       <%= yield %>
