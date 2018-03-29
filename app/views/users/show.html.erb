@@ -5,7 +5,7 @@
 <br>
 <div class="collection">
 <%@user_recipes.each do |recipe|%>
-  <li class="collection-item"><%=recipe.name%> <%= link_to 'More info', recipe%></li>
+  <li class="collection-item"><%=link_to recipe.name, recipe %> </li>
 <%end%>
 </div>
 </ul>
