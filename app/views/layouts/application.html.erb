@@ -17,6 +17,7 @@
       <div class="nav-wrapper 9e9e9e grey">
         <a href="/" class="brand-logo"><i class="material-icons">home</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link_to "About", about_path , :class => 'navbar-link'%></li>
           <% if user_signed_in? %>
             <li><%= link_to "New Recipe", new_recipe_path , :class => 'navbar-link'%></li>
             <li><%= link_to "All Recipes", recipes_path , :class => 'navbar-link'%></li>
