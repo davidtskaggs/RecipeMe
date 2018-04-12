@@ -3,26 +3,24 @@
 <h3 class="text-text">Recipe Database</h3>
 <!-- <h6><%= link_to 'Add New Recipe', new_recipe_path %><h6> -->
 <br />
-<div id="search-box">
+<!-- <div id="search-box">
   <%= form_tag('/recipes', method: "get") do %>
     <%= label_tag(:ingredient, "Search by ingredient:") %>
     <%= text_field_tag(:ingredient) %>
     <button class="btn waves-effect teal darken-4"><%= submit_tag("Search") %></button>
   <%end%>
-</div>
+</div> -->
 <br />
 <div id="search-box-name">
-  <%= form_tag('/recipes', method: "get") do %>
-    <%= label_tag(:name, "Search by recipe name:") %>
-    <%= text_field_tag(:name) %>
-    <button class="btn waves-effect teal darken-4"><%= submit_tag("Search") %></button>
+  <%= form_tag(recipes_path, method: "get", id: "search-form") do %>
+    <%= label_tag(:search, "Search by recipe name:") %>
+    <%= text_field_tag :search, params[:search] %>
+    <button class="btn waves-effect teal darken-4"><%= submit_tag("Search", :name => nil) %></button>
   <%end%>
 </div>
 <br />
-<% if @recipes.blank? && params[:ingredient] %>
-  <p>There are no recipes with <%= params[:ingredient]%>. </p>
-<%elsif @recipes.blank? && params[:name] %>
-<p>There are no recipes named <%= params[:name]%>. </p>
+<%if @recipes.blank? %>
+<p>There are no recipes containing the term <%= params[:search]%>. </p>
 <%else%>
 <table>
   <thead>

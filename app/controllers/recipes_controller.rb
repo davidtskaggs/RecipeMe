@@ -6,10 +6,10 @@
   def index
     current_user
     @recipes = Recipe.all
-    if params[:ingredient]
-      @recipes = @recipes.ingredient_search(params[:ingredient])
-    elsif params[:name]
-      @recipes = Recipe.name_search(params[:name])
+    # if params[:ingredient]
+    #   @recipes = @recipes.ingredient_search(params[:ingredient])
+    if params[:search]
+      @recipes = Recipe.search(params[:search]).order("created_at DESC")
     else
       @recipes = Recipe.all
     end
