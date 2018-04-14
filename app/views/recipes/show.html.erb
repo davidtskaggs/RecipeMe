@@ -27,7 +27,13 @@
       </div>
       <div class="card-action">
         <% if user_signed_in? %>
-          <%= link_to 'Rate this recipe', new_recipe_rating_path(@recipe) %>
+
+          <% if @current_user_rating.blank? %>
+            <%= link_to 'Rate this recipe', new_recipe_rating_path(@recipe) %>
+          <% else %>
+            <%= link_to 'Update rating', edit_recipe_rating_path(@recipe) %>
+          <% end %>
+
           <% if @recipe.user_id == current_user.id %>
             <%= link_to 'Edit', edit_recipe_path(@recipe) %>
             <%= link_to 'Delete', recipe_path(@recipe), data: {:confirm => 'Are you sure?'}, :method => :delete %>
