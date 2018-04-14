@@ -39,6 +39,21 @@ p, li, #recipes, td {
   height: 60px;
 }
 
+.button-link {
+  text-align: center;
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}
+
+.button-link:visited {
+  color: white;
+}
+
+
+
 /* sticky footer */
 body {
   display: flex;
