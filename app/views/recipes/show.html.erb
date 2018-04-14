@@ -14,7 +14,11 @@
         <br>
         <p><strong>Ingredients:</strong><br> <%= @recipe.ingredients%></p>
         <br>
-        <p><strong>Meal:</strong><br> <%= @recipe.category%></p>
+        <% if @recipe.category == "main_course" %>
+          <p><strong>Meal:</strong><br>Main Course</p>
+        <% else %>
+          <p><strong>Meal:</strong><br> <%= @recipe.category%></p>
+        <% end %>
         <p>
           <br>
           <% if user_signed_in? %>
