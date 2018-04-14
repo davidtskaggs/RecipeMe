@@ -39,7 +39,7 @@
         <td class="collection-item"><%= link_to recipe.name, recipe %> </td>
         <td class="collection-item"><%= recipe.user.email%></td>
         <td class="collection-item"><%= recipe.difficulty %></td>
-        <td class="collection-item"><%= recipe.prep_time %> minutes</td>
+        <td class="collection-item"><%= recipe.prep_time %>m</td>
         <% sum = 0 %>
         <% recipe.ratings.each do |rating| %>
           <% sum += rating.score %>
