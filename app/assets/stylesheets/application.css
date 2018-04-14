@@ -35,6 +35,10 @@ p, li, #recipes, td {
   text-align: center
 }
 
+.page-footer {
+  height: 60px;
+}
+
 /* sticky footer */
 body {
   display: flex;
