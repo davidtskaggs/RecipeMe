@@ -1,11 +1,11 @@
 <h3>My Recipes</h3>
 <ul>
-<button class="btn waves-effect teal darken-4"><%= link_to 'Add New Recipe', new_recipe_path %></button>
-<br>
-<br>
-<div class="collection">
-<%@user_recipes.each do |recipe|%>
-  <li class="collection-item"><%=link_to recipe.name, recipe %> </li>
-<%end%>
-</div>
+  <a class="waves-effect waves-light btn teal darken-4" href='<%=new_recipe_path%>'>Add New Recipe</a>
+  <br>
+  <br>
+  <div class="collection">
+    <%@user_recipes.each do |recipe|%>
+      <li class="collection-item"><%=link_to recipe.name, recipe %> </li>
+    <%end%>
+  </div>
 </ul>
