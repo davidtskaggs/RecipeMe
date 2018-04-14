@@ -1,21 +1,13 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <div id="recipes">
 <h3 class="text-text">Recipe Database</h3>
-<!-- <h6><%= link_to 'Add New Recipe', new_recipe_path %><h6> -->
-<br />
-<!-- <div id="search-box">
-  <%= form_tag('/recipes', method: "get") do %>
-    <%= label_tag(:ingredient, "Search by ingredient:") %>
-    <%= text_field_tag(:ingredient) %>
-    <button class="btn waves-effect teal darken-4"><%= submit_tag("Search") %></button>
-  <%end%>
-</div> -->
-<br />
 <div id="search-box-name">
   <%= form_tag(recipes_path, method: "get", id: "search-form") do %>
     <%= label_tag(:search, "Search by recipe name:") %>
     <%= text_field_tag :search, params[:search] %>
-    <button class="btn waves-effect teal darken-4"><%= submit_tag("Search", :name => nil) %></button>
+    <div class="center-align">
+      <button class="btn waves-effect teal darken-4"><%= submit_tag("Search", :name => nil) %></button>
+    </div>
   <%end%>
 </div>
 <br />

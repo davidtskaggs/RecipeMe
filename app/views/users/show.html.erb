@@ -1,8 +1,8 @@
-<h3>My Recipes</h3>
+<h3 class="text-text">My Recipes</h3>
 <ul>
-  <a class="waves-effect waves-light btn teal darken-4" href='<%=new_recipe_path%>'>Add New Recipe</a>
-  <br>
-  <br>
+  <div class="center-align">
+    <a class="waves-effect waves-light btn teal darken-4 button-link" href='<%=new_recipe_path%>'>Add New Recipe</a>
+  </div>
   <div class="collection">
     <%@user_recipes.each do |recipe|%>
       <li class="collection-item"><%=link_to recipe.name, recipe %> </li>
